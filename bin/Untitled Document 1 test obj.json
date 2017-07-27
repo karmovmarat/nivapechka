@@ -1,0 +1,50 @@
+
+{
+  "options": [ {
+    "host": "nivapechka_1.com",
+    "port": "80",
+    "path": "/publishing.html",
+    "method": "HEAD"
+    }, {
+    "host": "nivapechka_2.com",
+    "port": "80",
+    "path": "/publishing.html",
+    "method": "GET"
+    },{
+    "host": "nivapechka_3.com",
+    "port": "80",
+    "path": "/publishing.html",
+    "method": "HEAD"
+    }, {
+    "host": "nivapechka_4.com",
+    "port": "80",
+    "path": "/publishing.html",
+    "method": "HEAD"
+    } ],
+
+  "time_msec": "1000",
+  "private": true,
+  "method": { "type": ["GET", "POST", "HEAD", "PUT"]
+    },
+  "scripts": {
+    "start": "node ./bin/www"
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
