@@ -94,7 +94,7 @@ app.use('/tms9', myInterval.stop);
 //   res.send(' *** Your Timer is STOPPED! *** ');
 //   });
 // end section TAIMERS INTERVAL (start, stop)
-app.use('/', index);
+//app.use('/', index);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
