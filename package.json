@@ -2,9 +2,9 @@
   "name": "myapp",
   "version": "0.1.1",
   "private": true,
-  "description": "A packaged myapp Makes requests for the timer schedule",
+  "description": "node http request interval",
   "scripts": {
-    "start": "node ./bin/www" 
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -21,7 +21,7 @@
   "bin": {
     "myapp": "anyRequest.js"
   },
- "engines": {
+  "engines": {
     "node": "6.9.x",
     "npm": "4.1.x"
   },
@@ -40,6 +40,8 @@
   "devDependencies": {},
   "author": "karmov marat",
   "license": "ISC",
-  "description": "node http request interval"
+  "bugs": {
+    "url": "https://github.com/karmovmarat/deploy_on_heroku/issues"
+  },
+  "homepage": "https://github.com/karmovmarat/deploy_on_heroku#readme"
 }
-
