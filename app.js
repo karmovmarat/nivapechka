@@ -8,11 +8,11 @@ var sassMiddleware = require('node-sass-middleware');
 
 var fs = require('fs'); //***???
 
-var anyRequest = require('./bin/anyRequest');
-var anyInterval = require('./bin/anyinterval');
-var urlPathToConfig = ('./bin/urlPathToConfig.json');
-var index = require('./routes/index');
-var users = require('./routes/users');
+var anyRequest = require('bin/anyRequest'); // = require('./bin/anyRequest'); etc...
+var anyInterval = require('bin/anyinterval');
+var urlPathToConfig = ('bin/urlPathToConfig.json');
+var index = require('routes/index');
+var users = require('routes/users');
 
 var app = express();
 var configSchedule;
