@@ -37,7 +37,7 @@ app.use(function(req, res, next) {
   // Для получения основной конфигурации расписания
   if (!configSchedule) {
 
-    fs.readFileSync(urlPathToConfig, 'utf8', function(err, data) {
+    fs.readFile(urlPathToConfig, 'utf8', function(err, data) {
       if (err) {
         throw err;
       }
