@@ -35,21 +35,15 @@ app.use(function(req, res, next) {
   //11* Загрузка с локального диска базовой конфигурации  *****
   // И отправка запроса на удаленный сервер 
   // Для получения основной конфигурации расписания
-  if (!configSchedule) {
-
-    fs.readFile(urlPathToConfig, 'utf8', function(err, data) {
-      if (err) {
-        throw err;
-      }
-      configSchedule = JSON.parse(data);
+   if (!configSchedule) {
+      configSchedule = JSON.parse(fs.readFileSync(urlPathToConfig));
       //     myRequest = anyRequest(configSchedule); // first load
       console.log(configSchedule.timeIntervalMsec + "  первая загрузка");
       // myInterval.setConfig(configSchedule.timeIntervalMsec, myRequest.send);
       myRequest.setConfig(configSchedule);
       myRequest.send();
       console.log('myRequest.getConfig()');
-      console.log(myRequest.getConfig());
-    });
+      console.log(myRequest.getConfig()); 
   }
   //22* Загрузка основной конфигурации в модуль ИНТЕРВАЛ ****
   // и в модуль ЗАПРОС, Установка счетчика для обновления 
