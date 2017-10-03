@@ -1,6 +1,6 @@
 {
-  "timeIntervalMsec": "11000",
-  "comment_2": "interval 12 minut",
+  "timeIntervalMsec": "60000",
+  "comment_2": "interval 1 (one) minut",
   "urlPathToConfig_1": { "src": "http://nivapechka.com/wordpress/urlPathToConfig.json" },
   "urlPathToConfig_2": { "src": "./bin/urlPathToConfig.json" },
   "configScheduleTimeWithUrl": { "src": "http://nivapechka.com/wordpress/configScheduleTimeWithUrl.json" },
@@ -9,8 +9,8 @@
   "statusCycle": false,
 
   "options": [{
-    "host": "localhost",
-    "port": "3000",
+    "host": "nivapechka.com",
+    "port": "80",
     "path": "/wordpress/configScheduleTimeWithUrl.json",
     "method": "GET",
     "typejson": true

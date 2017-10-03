@@ -1,160 +1,224 @@
-<!DOCTYPE html>
-<html lang="en" ng-app>
-
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <title>Simple</title>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>-->
-  <!--<script src="https://d3js.org/d3.v4.min.js"></script>-->
-  <!--  <script src="https://d3js.org/d3.v4.js"></script> -->
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script src="js/d3.v4.js"></script>
-  <!-- <script src="./js/2_bootstrap.js"></script>-->
-  <script src="js/objDataJson_2.js"></script>
-  <!--css styles-->
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
-  <link href="css/simple_player.css" rel="stylesheet" type="text/css">
+<meta name="keywords" content="нива печка 2108 переделка установка вентилятора отопителя 2108 на ниву тихая с салонным фильтром в ниве nivapechka не греет радиатор печки своими руками термостат на ваз 2121 21213 21214 2131 от 2123 шеви chevi niva pechka вентиляция салона">
+<meta charset="UTF-8">
+<meta name='yandex-verification' content='5905cab0d3cb64a3' />
+<title>Нива печка 2108 | VAZ 21213 VAZ 2131 ВАЗ 21214 тихая печка Нива с вентилятором 2108</title>
+<!-- 
+<meta name='yandex-verification' content='5905cab0d3cb64a3' />
+-->
+<meta name="description" content="Установка вентилятора отопителя 2108 и салонного фильтра в автомобиль Нива 21213 2131 21214М для улучшения вентиляции салона устранения шума от штатного вентилятора печки. Как повысить теплоотдачу радиатора печки Нива путем установки термостата от Шевроле Нива.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style_479_bas.css"/>
+<link rel="stylesheet" type="text/css" media="(max-width:480px)" href="style_480.css"/>
+<link rel="stylesheet" type="text/css" media="(min-width:481px) and (max-width:640px)" href="style_481_640.css"/>
+<link rel="stylesheet" type="text/css" media="(min-width:641px) and (max-width:720px)" href="style_641_720.css"/>
+<link rel="stylesheet" type="text/css" media="(min-width:721px) and (max-width:1099px)" href="style_721_1099.css"/>
+<link rel="stylesheet" type="text/css" media="(min-width:1100px)" href="style_1100.css"/> 
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<script src="js/change_block.js" type="text/javascript"></script>
+<script src="js/shine.js" type="text/javascript"></script>
+<script src="js/shine_right.js" type="text/javascript"></script>
 </head>
-
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" style="border: none;" id="header">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#" style="padding: 0px;"> <img src="./img/DATASEM_logo.png" style="height: inherit;" alt="DATASEM"> </a>
-      </div>
-      <div id="navbar" class="navbar-collapse">
-        <p id="exp_name" class="navbar-text visible-sm visible-md visible-lg">lymari #1</p>
-        <p id="time_display" class="navbar-text visible-sm visible-md visible-lg">Tick:##(1 tick = xx days)</p>
-        <!--<p id="simulation_speed" class="navbar-text visible-sm visible-md visible-lg">abc</p>-->
-        <div id="simulation_buttons_tag" class="navbar-right visible-xs visible-sm visible-md visible-lg" style="display: inline; margin-right: 100px;">
-          <button class="btn btn-default navbar-btn" onclick="sim_player.setFrame(sim_player.current_frame - 1)">
-            <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span></button>
-          <button class="btn btn-default navbar-btn" onclick="sim_player.play();"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
-          <button class="btn btn-default navbar-btn" onclick="sim_player.pause();"><span class="glyphicon glyphicon-pause" aria-hidden="true"></span></button>
-          <button class="btn btn-default navbar-btn" onclick="sim_player.stop()"><span class="glyphicon glyphicon-stop" aria-hidden="true"></span></button>
-          <button class="btn btn-default navbar-btn" onclick="sim_player.setFrame(sim_player.current_frame + 1)">
-            <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span></button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div class="container-fluid" style="padding-left: 0;">
-    <!--<div class="col-md-2" id="sidebar" style="margin-top:-5px;"></div>-->
-    <div class="col-md-2"> </div>
-    <div class="col-md-10" style="overflow-x: scroll">
-      <div class="row">
-        <div class="col-md-3" style="margin: 0px; padding: 5px;">
-          <label for="trty"> загрузить JSON </label>
-          <input name="trty" type="button" value="press">
-          <div class="panel panel-default">
-            <div class="panel-heading">Progress</div>
-            <div class="panel-body" style="padding: 5px 10px 5px 10px">
-              <div id="progresses" class="container-fluid" style="padding: 1px;">
-                <!-- Here's Progress Chart -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-9" style="padding: 5px;">
-          <div class="row" style="margin: 0px;">
-            <div id="OCA" class="col-md-6" style="padding: 0px;">
-              <div class="panel panel-default">
-                <div class="panel-heading">Organizational Component Activity</div>
-                <div class="panel-body">
-                  <svg id="oca_svg" style="width: 100%; height: 450px;">
-                    <defs>
-                      <marker id="arrow" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                        <path d="M 0 0 L 10 5 L 0 10 z" />
-                        <path d="M 0 0 L 10 5 L 0 10 z" style="fill: #f00;"></path>
-                      </marker>
-                    </defs>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6" style="padding: 5px;">
-              <div class="panel panel-default" style="margin-top: -5px; margin-left:5px;">
-                <div class="panel-heading">Event</div>
-                <div class="panel-body">
-                  <div id="dsl_content" style="color: black; height:200px; overflow-y: scroll;">
-                    <!--dsl content-->
-                  </div>
-                </div>
-              </div>
-              <!--<div class="container" style="width: auto;">-->
-              <!--<ul class="nav nav-tabs" style="width: auto;">-->
-              <!--<li><a href="#org_content" data-toggle="tab">Org</a></li>-->
-              <!--<li><a href="#cop_info_content" data-toggle="tab">Cop Info</a></li>-->
-              <!--<li><a href="#tab_reqt_info" data-toggle="tab">Reqt Info</a></li>-->
-              <!--<li class="active"><a href="#tab_dsl" data-toggle="tab">Event</a></li>-->
-              <!--</ul>-->
-              <!--<div class="tab-content" style="width: auto;">-->
-              <!--<div class="tab-pane" id="org_content">-->
-              <!--&lt;!&ndash;org content&ndash;&gt;-->
-              <!--</div>-->
-              <!--<div class="tab-pane" id="cop_info_content">-->
-              <!--&lt;!&ndash;cop info content&ndash;&gt;-->
-              <!--</div>-->
-              <!--<div class="tab-pane" id="tab_reqt_info">-->
-              <!--&lt;!&ndash;reqt info content&ndash;&gt;-->
-              <!--</div>-->
-              <!--<div class="tab-pane active" id="tab_dsl">-->
-              <!--<div id="dsl_content" style="color: black; height:200px; overflow-y: scroll;">-->
-              <!--&lt;!&ndash;dsl content&ndash;&gt;-->
-              <!--</div>-->
-              <!--</div>-->
-              <!--</div>-->
-            </div>
-          </div>
-          <div id="other_diagrams" class="row" style="margin: 0px;">
-            <div id="cumulative_flow_diagrams" class="col-md-6 col-lg-8" style="padding: 0px;">
-              <div class="row" style="padding: 0px;margin: 0px;">
-                <div class="panel panel-default">
-                  <div class="panel-heading">Cumulative Flow Diagrams</div>
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      <div id="div_agg_indicators" style="height: 200px;">
-                        <select id="agg_select" size="10" style="width: 80px; height:200px; float: left;">
-                        </select>
-                        <svg id="agg_chart" style="height: 200px;"></svg>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div id="div_oc_indicators_chart" style="height: 200px;">
-                        <select id="oc_select" size="10" style="width: 80px; height:200px; float: left;">
-                        </select>
-                        <select id="oc_indicator_select" style="width: 80px; float: right;">
-                        </select>
-                        <svg id="oc_indicator_chart" style="height: 180px"></svg>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div id="div_wi_indicators" style="height: 200px;">
-                        <select id="wi_select" size="10" style="width: 80px; height:200px; float: left;">
-                        </select>
-                        <select id="wi_indicator_select" style="width: 80px; float: right;">
-                        </select>
-                        <svg id="wi_indicator_chart" style="height: 180px"></svg>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div id="other_graphs" class="col-md-6 col-lg-4" style="margin: 0px;padding: 0px 5px;">
-              <div class="panel panel-default">
-                <div class="panel-heading">Graphs</div>
-                <div class="panel-body"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="js/des_viewer.js"></script>
-  <script src="js/simple_player.js"></script>
-</body>
+<div id="wrap">
+	    <div class="container">   <object id="header_object" type="text/html" data="top_navi.html" >  </object>  
+	    </div>
+		 <div id="menu">   	<script src="js/shapka_menu_2.js" type="text/javascript"> </script>       		
+		 </div>
+		 <script type="text/javascript"> shineLinks('menu');</script>
+		 <div id="content">
+				 <div class="left"> 
 
+						<h1> <a href="#">Да, это Нива! Теперь в Ниве тихая печка, мотор вентилятора ваз 2108 и САЛОННЫЙ ФИЛЬТР!</a> </h1>
+						<p> &nbsp;</p>
+						<p id="refresh_date">Обновлено: <script src="js/refresh_date.js" type="text/javascript"></script>   </p>
+						<p> Нива-печка салонный фильтр и мотор вентилятора 2108 легко установить своими руками в автомобиль Нива ВАЗ 2121 21213 21214 2131 LADA 4x4 URBAN 21215, 21219, Нива-Бронто, 2129, 21310, Нива-пикап, 21214-М, ЛАДА 4х4 УРБАН.</p>
+						
+						
+						Добро пожаловать на наш сайт НИВА ПЕЧКА.
+						Если вы здесь, значит у вас есть автомобиль Нива <img src="images/Icon_smile.gif" alt=":-)"  > .
+						И значит у вас есть вопросы по вентиляции и обогреву в салоне Нивы. Если вы еще не
+						переоборудовали штатный отопитель в Ниве, то наш сайт поможет вам в этом деле.
+						Когда-то любой владелец Нивы задается вопросом - что делать со штаным вентилятором отопителя?
+						Вентилятор отопителя шумит, у него низкая производительность, к нему неудобно добираться для
+						его ремонта, всего две скорости, в мороз из-за плохой вентиляции окна в салоне Нивы
+						затягивает инеем. И эти недостатки присутствуют на любой модели Нива 2121 21213 21214 2129
+						2131. В том числе и на современных ЛАДА 4х4 УРБАН, LADA 4x4 URBAN. Причем независимо от года выпуска и варианта исполнения, будь то карбюраторная Нива или инжекторная Нива.<br/>
+						Для решения этого вопроса предлагается установить вентилятор отопителя 2108 в печку Нива.
+						В принципе установка улитки зубильного вентилятора отопителя в Ниву посильна любому владельцу русского джипа.
+						Для этого в сети есть все чертежи воздухозаборника для установки вентилятора 2108 в Ниву.
+						Так же потребуется пара недель времени, металл, угловая шлифмашинка, сварка, сколько-то потраченных нервов,
+						потому-что с первого раза размер, как всегда, будет не тот. Необходимо также позаботится о месте крепления резистора
+						отопителя, изготовить жгут для подключения вентилятора 2108, укомплектовать всеми болтиками, переключателями
+						и т.д. и т.п. Для любителей творить своими руками это доставит немало удовольствия, особенно, когда
+						новая Нива печка заработает с вентилятором от 2108!<p> &nbsp;</p>
+						Однако не у всех есть время для таких экспериментов, работа и домашние заботы могут запросто
+						отбить желание переделывать печку в Ниве. Несмотря на кажущуюся дешевизну самостоятельной переделки вентилятора отопителя в Ниве,
+						личное время потраченное на переделку печки может свести на нет всю экономию. Но самое обидное, когда начав переделку печки
+						в Ниве, по разным причинам (кому-то надо просить сварку, кому-то искать электрика, чтоб подключить вентилятор)
+						дело затягивается, деньги потрачены, печка в Ниве еще не переделана, а зима приходит неожиданно!<br/><br/>
+						В нашей команде у всех есть автомобиль Нива, и мы знаем эту проблему непонаслышке. Поэтому мы предлагаем для переделки
+						печки на Ниве различные комплекты, выверенные по размеру и готовые для установки как на карбюраторные так и на инжекторные Нивы. Комплекты Нива печка для установки вентилятора 2108 в Ниву самые разнообразные по составу.
+						От самого полного комплекта (окрашенный корпус воздухозаборника для крепления вентилятора 2108, реостат, переключатель скорости, ручки, болты,
+						уплотнители, улитка 2108, усиленный электрический жгут для подключения в штатную проводку без ее повреждения) до любого элемента по отдельности.
+						Вы сами можете выбрать какие элементы у вас уже есть, а какие вам нужно приобрести. А съэкономленное время это по сути съэкономленные деньги.
+						И поверьте, какой-бы способ переделки печки на вашей Ниве вы бы ни выбрали, когда вы завершите переделку, готовый результат доставит 
+						вам только положительные эмоции! И вы полюбите свою Ниву еще больше.
+						
+						<p id="signature">Успехов вам, с уважением команда сайта <a href="http://nivapechka.com">nivapechka.com</a>.</p>
+						<br>
+						<h2>Владельцам автомобиля Нива посвящается!</h2>
+						Легендарный советский внедорожник ВАЗ
+						2121 Нива, а теперь и российский ЛАДА 4х4 любим многими поколениями
+						россиян. Нива пользуется заслуженной популярностью и за рубежом, за
+						свою неприхотливость и непревзойдённые вездеходные качества. Я также
+						являюсь поклонником автомобиля Нива. Много лет эксплуатирую ВАЗ 2131
+						Нива. Но как в далёком в 1977 году, так и в настоящем 2013 году
+						автомобили Нива имеют моторчик печки с лопастной конструкцией, который
+						шумит, визжит и не справляется с вентиляцией салона.
+							<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block0")' style='margin-bottom: 4px; display: inline-block;'>читать дальше...</a> 
+									<div style='display: none;' id='block0'>&nbsp;<br/>Что до сих пор
+									является ложкой дёгтя в автомобиле Нива. Это заставило меня взяться за
+									поиск решения проблемы. Так как я живу в Сибири и 6 месяцев в году у
+									нас зима и регулярно бывают морозы -30<sup>0</sup>С и -40<sup>0</sup>С, со штатным вентилятором окна регулярно приходится отскрёбывать от инея. А если едешь в -30<sup>0</sup>С
+									по трассе, ещё и лобовик затягивает. Отказываться от автомобиля Нива
+									из-за плохой печки не было желания. Стал искать решение вопроса.
+									Первое, что пришло на ум использовать вентилятор 
+									
+									
+										<div class="thumbnail">
+										<a href="gallery/IMG_0052.jpg"> <img alt="Нива печка 2108 в сборе" src="thumbnails/IMG_0052-300x225.jpg"> Нива печка 2108 в сборе </a>
+										</div>
+									
+									печки ВАЗ 2108 (высокая производительность, тихая работа, доступная цена,
+									достаточно высокий ресурс). Различные эксперименты с установкой
+									вентилятора укрепили мысль установить его в подкапотном пространстве.
+									Для этого потребовалась серьёзная модификация штатного
+									воздухозаборника. Путём подрезания и перепаивания воздухозаборника была
+									получена необходимая конструкция. Практические испытания показали её
+									высокую эффективность. Как оказалось, в своих изысканиях
+									
+									
+										<div class="thumbnail">
+										
+										<a target="_blank" href="complect/nivapechka_case_maks8302051_.html"><img alt="Нива печка 2108 в сборе Комплект - МАКСИ КЛАССИК с электрическим жгутом" src="thumbnails/1x8302/nivapechka_1x_maks8302051_1.JPG"> Нива печка 2108 с электрическим жгутом </a>
+										</div>
+									
+									был не одинок и на просторах интернета я натолкнулся на аналогичную
+									конструкцию уважаемого Cмогилa. Его конструкция была похожа на мою, но
+									отличалась тем, что состояла из двух частей. Благодаря этим идеям я изготовил свою модернизированную печку из металла и из двух
+									частей для своего автомобиля, которой очень доволен. В результате чего
+									она стала практичней и значительно удобней в эксплуатации. А вентиляция салона в Ниве стала выше всяких похвал. Рекомендую такую печку
+									всем Ниваводам.<br />
+									</div> 
+							</div>
+						<p> &nbsp;</p>
+						 
+						 12.04.2017
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block12")' style='margin-bottom: 4px; display: inline-block;'><h2> «Нива» на службе у Почты! </h2></a><div style='display: none;' id='block12'>&nbsp;<br/>
+						 Практически нет ни одной крупной хозяйствующей структуры где бы не использовалась «Нива».
+						  <a href="galery.html">Смотрим "Нива" она же Lada 4x4 на службе у Почты. </a>
+						 <br /></div>
+						</div>
+						 12.04.2017
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block11")' style='margin-bottom: 4px; display: inline-block;'><h2> Наша легендарная «Нива» отмечает юбилей! </h2></a><div style='display: none;' id='block11'>&nbsp;<br/>
+						 Прошло 40 лет с тех пор как с Волжского автомобильного завода вышла первая серийная «Нива». Автомобиль завоевал уважение поклонников со всех континентов и стал родоначальником класса SUV (Sport Utility Vehicle). 
+						 По прошествии 40 лет с момента выхода первого серийного автомобиля «Нива» изменилась несильно. В девяностых годах руководство умудрились передать имя "НИВА" совместному предприятию с General Motors. Новое имя "Lada 4×4" не популярно, и народ называет автомобиль, как и прежде "НИВА"!. Автомобиль превратился в легенду, и лишить его имени невозможно. 
+						 Приводя цитату из Top Gear, где телеведущий и журналист Джеймс Мэй оценивает нашу машину: «„Нива“, запущенная в производство в 1977 году, была первой „Ладой“, не копирующей итальянские седаны. В то время как всё, что находилось под капотом, принадлежало Fiat, система управления и корпус были трудами великолепной работы „Лады“. Она получила свою репутацию 
+						 за живучесть, достигла кое-каких успехов во внедорожных гонках и заработала престиж у землевладельцев и у других людей без чувства иронии. И даже сейчас, несмотря на первоначальный скептицизм, она способна унизить более крупных и современных конкурентов на бездорожье». Нынешний интерес программы Top Gear к 40-летней модели "Нива" неслучаен. 
+						 В Великобритании перестал продаваться архаичный Land Rover Defender. И жителям сельских районов русская простая и надежная "Нива" видится достойной альтернативой их  Defender-у. Потребность в простой и неприхотливой конструкции, ремонт которой доступен и в гараже, и в поле, до сих пор велика. Эпоха «Нивы» продолжается - поздравляем с ЮБИЛЕЕМ!
+						 <br /></div>
+						</div>
+						 28.12.2016
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block10")' style='margin-bottom: 4px; display: inline-block;'><h2> Поздравляем С Новым 2017 Годом! </h2></a><div style='display: none;' id='block10'>&nbsp;<br/>Поздравляем всех с Новым 2017 годом! Мы желаем всем Новогоднего настроения, и пусть в наступающем Новом Году сбудутся все ваши мечты! 
+						С наилучшими пожеланиями команда сайта <a href="http://nivapechka.com">nivapechka.com </a> <br /> Расписание работы на Новогодние праздники. В магазинах на ул.Трикотажной и на авторынке "Столица" ул.Петухова 51Г праздничные дни с 01.января 2017 года по 04.января 2017 года включительно. 05-06 января рабочие дни, 07-08 января праздничные дни. С 09 января 2017 года работа по обычному
+						расписанию. Отправка заказов в регионы в новом 2017 году возобновится с 14.01.2017 года.
+						 <br /></div>
+						</div>
+						  31.08.2016
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block9")' style='margin-bottom: 4px; display: inline-block;'><h2> Где установить переключатель печки Калина в автомобиле Нива.</h2></a><div style='display: none;' id='block9'>&nbsp;<br/>Переключатель печки Калина можно установить в автомобиле Нива справа под рулем...
+						 <a target="_blank" href="complect/nivapechka_detail_part_kalina.html"> Фото как выглядит переключатель печки Калина на 
+автомобиле Нива смотим здесь !</a> <br /></div>
+						</div>		
+						 26.02.2016
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block8")' style='margin-bottom: 4px; display: inline-block;'><h2> Профилактика гибочного пресса с 02 марта по 15 марта 2016г.</h2></a><div style='display: none;' id='block8'>&nbsp;<br/>В период с 02 марта по 15 марта у нас будут производиться работы по профилактике и перенастройке гибочного пресса.
+						 В связи с этим заказы, оформленные (и оплоченные) в период с 02.03.2016г по 15.03.2016г, будут отправлены в срок до 19 марта 2016 года. 
+						 Далее оформление и отправка заказов будет производиться в обычном графике. Заказы, оформленные (и оплоченные) до 02 марта 2016г будут отправлены по  
+						 обычному расписанию (без задержек). С наилучшими пожеланиями команда сайта <a href="http://nivapechka.com">nivapechka.com </a> <br /></div>
+						</div>						 
+						 21.12.2015
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block7")' style='margin-bottom: 4px; display: inline-block;'><h2> Поздравляем Всех С Новым 2016 Годом!</h2></a><div style='display: none;' id='block7'>&nbsp;<br/>Мы поздравляем всех с Новым 2016 годом! Желаем вам творческих успехов и всегда хорошего настроения, ТЕПЛА и Уюта в ваших Нивах! С наилучшими пожеланиями команда сайта <a href="http://nivapechka.com">nivapechka.com </a> <br /></div>
+						</div>
+						 21.12.2015
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block6")' style='margin-bottom: 4px; display: inline-block;'><h2> Расписание работы на Новогодние праздники.</h2></a><div style='display: none;' id='block6'>&nbsp;<br/>В магазинах на ул.Трикотажной и на авторынке "Столица" ул.Петухова 51Г праздничные дни с 01.января 2016 года по 11.января 2016 года включительно. С 12 января 2016 года работа по обычному
+						расписанию. Отправка заказов в регионы в этом году до 26.12.2015 года включительно. В новом 2016 году отправка возобновится с 15.01.2016 года. Это связанно с расписанием работы транспортных компаний в Новогодние праздники, а также из-за значительного предпраздничного ажиотажа на Почте России.
+						Поэтому отправка заказов в период с 26.12.2015г по 15.01.2016г производится не будет. Надеемся на ваше понимание.   <br /></div>
+						</div>
+						 19.10.2015
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block5")' style='margin-bottom: 4px; display: inline-block;'><h2> Проведена корректировка цен, следите за нашими акциями.</h2></a><div style='display: none;' id='block5'>&nbsp;<br/>На нашем сайте произведена корректировка цен на 2-5%. Так например цена на салонный фильтр типа АС-101 снижена с 450 руб до 400 руб. Следите за нашими акциями на сайте nivapechka.com <br /></div>
+						</div>
+						12.06.2015
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block4")' style='margin-bottom: 4px; display: inline-block;'><h2>Сайт Нива печка получил обновленный дизайн и доступен на мобильных устройствах.</h2></a><div style='display: none;' id='block4'>&nbsp;<br/>Мы запустили обновленную версию сайта Нива-печка. Теперь пользоваться сайтом Нива-печка удобно и на мобильных устройствах. Как и прежде никакой посторонней рекламы. Только полезная информация касающаяся вентиляции и отопления автомобиля Нива LADA 4x4 URBAN. Как сделать Ниву комфортней и удобней в эксплуатации. Как самостоятельно установить Нива-печка с салонным фильтром в домашнем гараже. И другие вопросы как сделать Ниву лучше. Надеемся вам будет удобно пользоваться нашим сайтом nivapechka.com <br /></div>
+						</div>
+						15.03.2015
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block3")' style='margin-bottom: 4px; display: inline-block;'><h2>LADA 4x4 URBAN Нива кондиционер и печка с салонным фильтром.</h2></a><div style='display: none;' id='block3'>&nbsp;<br/>Мы адаптировали комплекты Нива-печка "МАКСИ КЛАССИК" и "МАКСИ С САЛОННЫМ ФИЛЬТРОМ" для установки в новые автомобили LADA 4x4 URBAN и Лада 4х4 Урбан! Наличие подробной инструкции по установке позволяет произвести установку Нива-печка даже самостоятельно в домашнем гараже. А бумажный салонный фильтр промышленного производства надежно защитит радиатор отопителя и кондиционера, а так же салон Нивы от пыли и тополиного пуха. <br /></div>
+						</div>
+						04.01.2015
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block2")' style='margin-bottom: 4px; display: inline-block;'><h2>Изменение цен с 4 января 2015 года.</h2></a><div style='display: none;' id='block2'>&nbsp;<br/>У нас произошло изменение цен на комплекты и комплектующие Нива-печка с 4 января 2015 года по известным причинам. Мы работаем с различными поставщиками: металла, моторов 2108, мелких комплектующих. Однако мы прилагаем все усилия, которые зависят от нас, чтобы эти изменения были минимальными. <br /></div>
+						</div>
+						05.02.2014
+						<div style='margin-bottom: 10px;'><a href='#' onclick='return change_block_view("block1")' style='margin-bottom: 4px; display: inline-block;'><h2>Нива-печка комплекты из нержавеющей стали.</h2></a><div style='display: none;' id='block1'>&nbsp;<br/>Теперь комплекты "МАКСИ КЛАССИК" и "МАКСИ С САЛОННЫМ ФИЛЬТОРОМ"  доступны с корпусами из нержавеющей стали 2мм!<br /></div> </div>
+						
+						
+						<div class="footer">
+						
+						<script src="js/footer.js" type="text/javascript"></script>
+											
+						</div>
+						
+						
+				 </div>
+						
+				<div id="right_id" class="right"> 
+				<h2>Разделы:</h2>
+				
+				<script src="js/shapka_menu_right.js" type="text/javascript"></script>
+				<script> shineLinks_right("right_id");</script>
+				</div>
+				
+		 </div>
+		<div style="clear: both;"> </div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter21564967 = new Ya.Metrika({id:21564967,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/21564967" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
 </html>

@@ -2,7 +2,7 @@
   "name": "myapp",
   "version": "0.1.2",
   "private": true,
-  "description": "node http request interval",
+  "description": "nivapechka",
   "scripts": {
     "start": "node ./bin/www"
   },
