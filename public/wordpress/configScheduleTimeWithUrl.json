@@ -1,35 +1,35 @@
 {
   "timeIntervalMsec": "60000",
   "comment_2": "interval 1 (one) minut",
-  "urlPathToConfig_1": { "src": "http://nivapechka.com/wordpress/urlPathToConfig.json" },
-  "urlPathToConfig_2": { "src": "./bin/urlPathToConfig.json" },
-  "configScheduleTimeWithUrl": { "src": "http://nivapechka.com/wordpress/configScheduleTimeWithUrl.json" },
+  "urlPathToConfig_1": { "src": " " },
+  "urlPathToConfig_2": { "src": " " },
+  "configScheduleTimeWithUrl": { " " },
   "resume": false,
   "firstLoad": false,
   "statusCycle": false,
 
   "options": [{
-    "host": "nivapechka.com",
+    "host": " ",
     "port": "80",
-    "path": "/wordpress/configScheduleTimeWithUrl.json",
+    "path": " ",
     "method": "GET",
     "typejson": true
   }, {
-    "host": "nivapechka.com",
+    "host": " ",
     "port": "80",
-    "path": "/publishing.html",
+    "path": " ",
     "method": "HEAD",
     "typejson": false
   }, {
-    "host": "nivapechka.com",
+    "host": " ",
     "port": "80",
-    "path": "/FAQ.html",
+    "path": " ",
     "method": "HEAD",
     "typejson": false
   }, {
-    "host": "nivapechka.com",
+    "host": " ",
     "port": "80",
-    "path": "/contact.html",
+    "path": " ",
     "method": "HEAD",
     "typejson": false
   }]
